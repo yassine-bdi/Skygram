@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Inertia\Inertia; 
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -13,8 +14,12 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+
+        $postes = Post::with('user')->withCount('comments')->get(); 
+        return Inertia::render('postes/index', [
+            'postes' => $postes
+        ]); 
     }
 
     /**

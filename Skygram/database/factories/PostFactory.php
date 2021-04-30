@@ -22,7 +22,10 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'caption' => $this->faker->sentence(), 
+            'attachment' => $this->faker->imageUrl(640, 480, 'Skygram', true), 
+            'user_id' => rand(1,6) 
+            
         ];
     }
 }

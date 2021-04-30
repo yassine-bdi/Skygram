@@ -2,7 +2,7 @@
     <div>
         <jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen ">
             <nav class="bg-white border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,6 +19,9 @@
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
+                                </jet-nav-link>
+                                 <jet-nav-link :href="route('postes')" :active="route().current('postes')">
+                                    Postes
                                 </jet-nav-link>
                             </div>
                         </div>
@@ -105,7 +108,7 @@
                                         </div>
 
                                         <jet-dropdown-link :href="route('profile.show')">
-                                            Profile
+                                            Account Settings
                                         </jet-dropdown-link>
 
                                         <jet-dropdown-link :href="route('api-tokens.index')" v-if="$page.props.jetstream.hasApiFeatures">
@@ -142,6 +145,9 @@
                     <div class="pt-2 pb-3 space-y-1">
                         <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </jet-responsive-nav-link>
+                         <jet-responsive-nav-link :href="route('postes')" :active="route().current('postes')">
+                            postes
                         </jet-responsive-nav-link>
                     </div>
 
