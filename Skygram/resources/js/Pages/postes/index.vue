@@ -15,9 +15,10 @@
         
          <div><img  v-bind:src=" post.attachment "  class="w-52 py-6 mx-14"> </div>
        
-        <div class="py-1 mx-14"> <a href="#" class="bg-indigo-500 p-2 text-sm text-white my-3">Like </a> 
-        <div class="float-right"> {{ post.comments_count}} comments </div>
-        </div> 
+        <div class="py-1 mx-14 "> <a href="#" class="bg-indigo-500 p-2 text-sm text-white my-3">Like </a> 
+        <inertia-link :href="route('postsshow', post.id )"   class="bg-indigo-500 p-2 text-sm text-white my-3 mx-4" preserve-scroll>Comment</inertia-link>
+        <div class="float-right"> {{ post.comments_count}} comments  </div> 
+        </div> <br> 
         </div>
         </div>
             </div></div>
@@ -31,13 +32,15 @@
            AppLayout 
        }, 
 
+       props : ['postes'], 
+
        data() {
            return {
                postes : this.postes
            }
        }, 
 
-       props : ['postes'],  
+     
      
  }
  </script>
